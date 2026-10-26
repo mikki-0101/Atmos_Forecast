@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 12% 5%, #39356f 0%, transparent 38%),
+    radial-gradient(ellipse at 92% 28%, #154f67 0%, transparent 38%),
+    linear-gradient(135deg, #11142c, #1a2042 55%, #10182c);
+  background-attachment: fixed;
+}

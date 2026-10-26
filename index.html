@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atmos Forecast</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+      <main class="app">
+    <header class="topbar">
+      <a href="#" class="logo">☁ atmos<span>.</span></a>
+      <p class="tagline">Your world, in weather.</p>
+      <div class="live-badge"><span></span> LIVE WEATHER</div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">WEATHER DASHBOARD</p>
+      <h1>Feel the <span>atmosphere.</span></h1>
+      <p class="subtitle">Real-time weather and forecasts for your city.</p>
+
+      <form class="search-bar" id="searchForm" autocomplete="off">
+        <span class="search-icon">⌕</span>
+        <div class="search-input-wrap">
+          <input
+            id="cityInput"
+            type="text"
+            placeholder="Search a city, e.g. Pune"
+            aria-label="Search city"
+            aria-controls="citySuggestions"
+            aria-expanded="false"
+            aria-autocomplete="list"
+            role="combobox"
+            required
+          >
+            <div id="citySuggestions" class="city-suggestions" role="listbox"></div>
+        </div>
+        <button type="submit" id="searchButton">Search ↗</button>
+      </form>
+      <p id="status" class="status" role="status">Loading weather...</p>
+    </section>
 </body>
 </html>
