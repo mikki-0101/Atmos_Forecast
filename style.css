@@ -14,3 +14,15 @@ body {
     linear-gradient(135deg, #11142c, #1a2042 55%, #10182c);
   background-attachment: fixed;
 }
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  width: min(1160px, 92%);
+  margin: auto;
+}
