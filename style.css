@@ -14,7 +14,8 @@ body {
     linear-gradient(135deg, #11142c, #1a2042 55%, #10182c);
   background-attachment: fixed;
 }
-button, input {
+button,
+input {
   font: inherit;
 }
 
@@ -22,7 +23,114 @@ button {
   cursor: pointer;
 }
 
-.app {
+.main {
   width: min(1160px, 92%);
   margin: auto;
+}
+.navbar {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.logo span {
+  color: #76e3dc;
+}
+.tagline, .muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 30px;
+  padding: 9px 13px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.hero {
+  text-align: center;
+  padding: 54px 0 35px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 11px;
+}
+.hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  letter-spacing: -2px;
+  line-height: 1.2;
+  color: black;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #b7a8ff, #72e1de);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 13px;
+}
+
+.search-bar {
+  position: relative;
+  z-index: 10;
+  width: min(500px, 100%);
+  margin: 28px auto 0;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.075);
+  border-radius: 15px;
+  backdrop-filter: blur(18px);
+  transition: border-color .2s;
+}
+
+.search-bar:focus-within {
+  border-color: var(--accent);
+}
+
+.search-icon {
+  padding-left: 10px;
+  font-size: 25px;
+  color: var(--muted);
+}
+
+.search-input-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.search-input-wrap input {
+  width: 100%;
+  padding: 12px 0;
+  color: white;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font-size: 13px;
 }
