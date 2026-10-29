@@ -4,16 +4,55 @@
   box-sizing: border-box;
 }
 
+/* Animated Weather Dashboard Background */
 body {
   min-height: 100vh;
   font-family: "Inter", sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(ellipse at 12% 5%, #39356f 0%, transparent 38%),
-    radial-gradient(ellipse at 92% 28%, #154f67 0%, transparent 38%),
-    linear-gradient(135deg, #11142c, #1a2042 55%, #10182c);
-  background-attachment: fixed;
   color: white;
+
+  background:
+    radial-gradient(
+      ellipse at 12% 5%,
+      rgba(99, 102, 241, 0.45),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 90% 80%,
+      rgba(6, 182, 212, 0.3),
+      transparent 40%
+    ),
+    linear-gradient(120deg, #080d1c, #172554, #312e81, #164e63, #080d1c);
+
+  background-size:
+    180% 180%,
+    180% 180%,
+    400% 400%;
+
+  background-attachment: fixed;
+  animation: weatherGradient 12s ease-in-out infinite;
+}
+
+@keyframes weatherGradient {
+  0% {
+    background-position:
+      0% 0%,
+      100% 100%,
+      0% 50%;
+  }
+
+  50% {
+    background-position:
+      100% 80%,
+      0% 20%,
+      100% 50%;
+  }
+
+  100% {
+    background-position:
+      0% 0%,
+      100% 100%,
+      0% 50%;
+  }
 }
 button,
 input {
@@ -277,7 +316,8 @@ button {
     ),
     var(--card);
 }
-.card-heading, .section-heading {
+.card-heading,
+.section-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -286,7 +326,7 @@ button {
 
 .card h2 {
   font-size: 17px;
-  letter-spacing: -.4px;
+  letter-spacing: -0.4px;
 }
 
 .card-heading .muted {
@@ -295,7 +335,7 @@ button {
 
 .weather-icon {
   font-size: 62px;
-  filter: drop-shadow(0 5px 16px rgba(255, 208, 100, .18));
+  filter: drop-shadow(0 5px 16px rgba(255, 208, 100, 0.18));
 }
 
 .temperature-row {
@@ -363,7 +403,7 @@ button {
   align-items: center;
   gap: 10px;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   font-size: 12px;
 }
 
@@ -414,14 +454,23 @@ button {
   line-height: 1.6;
 }
 
-.aqi-track, .uv-track {
+.aqi-track,
+.uv-track {
   height: 6px;
   border-radius: 10px;
-  background: linear-gradient(90deg, #63d99a, #e9db76, #ffae6c, #f16e80, #bd8cff);
+  background: linear-gradient(
+    90deg,
+    #63d99a,
+    #e9db76,
+    #ffae6c,
+    #f16e80,
+    #bd8cff
+  );
   margin: 12px 0 8px;
   position: relative;
 }
-.aqi-track div, .uv-track div {
+.aqi-track div,
+.uv-track div {
   position: absolute;
   top: -3px;
   left: 0;
@@ -430,7 +479,7 @@ button {
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 8px white;
-  transition: left .3s;
+  transition: left 0.3s;
 }
 
 .scale-labels {
@@ -483,7 +532,7 @@ button {
   height: 115px;
   left: 16%;
   bottom: -66px;
-  border: 1px dashed rgba(247, 196, 128, .7);
+  border: 1px dashed rgba(247, 196, 128, 0.7);
   border-bottom: 0;
   border-radius: 100px 100px 0 0;
 }
@@ -497,7 +546,7 @@ button {
   height: 17px;
   background: #ffce85;
   border-radius: 50%;
-  box-shadow: 0 0 25px rgba(255, 190, 100, .5);
+  box-shadow: 0 0 25px rgba(255, 190, 100, 0.5);
 }
 
 .sun-times {
@@ -551,7 +600,7 @@ button {
   justify-content: space-between;
   gap: 12px;
   padding: 13px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   font-size: 12px;
 }
 
@@ -659,7 +708,9 @@ footer span {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    transition-duration: .01ms !important;
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
   }
 }
