@@ -13,6 +13,7 @@ body {
     radial-gradient(ellipse at 92% 28%, #154f67 0%, transparent 38%),
     linear-gradient(135deg, #11142c, #1a2042 55%, #10182c);
   background-attachment: fixed;
+  color: white;
 }
 button,
 input {
@@ -52,15 +53,18 @@ button {
   font-size: 13px;
 }
 .live-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 30px;
-  padding: 9px 13px;
-  font-size: 10px;
-  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #4ade80;
 }
 
 .hero {
@@ -79,7 +83,7 @@ button {
   font-size: clamp(32px, 5vw, 52px);
   letter-spacing: -2px;
   line-height: 1.2;
-  color: black;
+  /* color: black; */
 }
 
 .hero h1 span {
@@ -141,8 +145,9 @@ button {
 }
 
 .search-bar button {
-  background: linear-gradient(135deg, #9584ff, #70d9d6);
-  color: #12152d;
+  /* background: linear-gradient(135deg, #9584ff, #70d9d6); */
+  background: transparent;
+  color: #f2f2f7;
   border: 0;
   padding: 12px 17px;
   border-radius: 10px;
@@ -557,19 +562,104 @@ button {
 .detail-row strong {
   text-align: right;
 }
-.detail-row {
+
+footer {
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 13px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .07);
-  font-size: 12px;
-}
-
-.detail-row span {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 24px 0 30px;
+  border-top: 1px solid var(--border);
   color: var(--muted);
+  font-size: 11px;
 }
 
-.detail-row strong {
-  text-align: right;
+footer span {
+  color: #f59aaf;
+}
+
+@media (max-width: 850px) {
+  .dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .current-card {
+    grid-column: span 2;
+  }
+
+  .tagline {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .app {
+    width: 91%;
+  }
+
+  .topbar {
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 23px;
+  }
+
+  .live-badge {
+    font-size: 9px;
+    padding: 8px 10px;
+  }
+
+  .hero {
+    padding: 42px 0 25px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .search-bar {
+    gap: 6px;
+  }
+
+  .search-bar button {
+    padding: 12px;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .current-card {
+    grid-column: span 1;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .temperature-row h3 {
+    font-size: 65px;
+  }
+
+  .weather-icon {
+    font-size: 50px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: .01ms !important;
+  }
 }
